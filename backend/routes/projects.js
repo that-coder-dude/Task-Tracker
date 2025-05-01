@@ -4,7 +4,7 @@ const Project = require('../models/Project');
 
 const router = express.Router();
 
-// GET /api/projects — list all projects for this user
+
 router.get('/', authMiddleware, async (req, res) => {
   try {
     const projects = await Project.find({ user: req.user._id });
@@ -15,11 +15,11 @@ router.get('/', authMiddleware, async (req, res) => {
   }
 });
 
-// POST /api/projects — create a new project (max 4 per user)
+
 router.post('/', authMiddleware, async (req, res) => {
   const { name, description } = req.body;
   try {
-    // Check project count
+
     const count = await Project.countDocuments({ user: req.user._id });
     if (count >= 4) {
       return res
