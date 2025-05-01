@@ -11,13 +11,13 @@ const projectSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Reference to User
+    ref: 'User', 
     required: true
   },
   tasks: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Task' // Reference to Task
+      ref: 'Task'
     }
   ],
   status: {
