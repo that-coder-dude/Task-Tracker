@@ -21,7 +21,7 @@ const taskSchema = new mongoose.Schema({
   completedAt: Date,
   project: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Project', // Reference to Project
+    ref: 'Project', 
     required: true
   }
 });
