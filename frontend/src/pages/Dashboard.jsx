@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../api";
-import "../css/dashboard.css"; // Import the CSS file
+import "../css/dashboard.css"; 
 
 export default function Dashboard() {
   const [projects, setProjects] = useState([]);
   const [form, setForm] = useState({ name: "", description: "" });
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProjects();
@@ -39,8 +39,8 @@ export default function Dashboard() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Remove JWT token from localStorage
-    navigate("/login"); // Redirect to the login page
+    localStorage.removeItem("token"); 
+    navigate("/login"); 
   };
 
   return (
